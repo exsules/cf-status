@@ -1,6 +1,6 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.exsules.dev' # used for Slack messages
+  url: 'https://status.exsules.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
@@ -15,11 +15,11 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: oauth2-dev # unique identifier
+    name: accounts.exsules.dev/o/oauth2
+    description: 'OAuth2 Service' # default=empty
+    url: 'https://accounts.exsules.dev/o/oauth2/certs' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+    linkable: true # allows the title to be a link, default=true
